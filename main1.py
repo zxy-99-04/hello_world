@@ -6,6 +6,12 @@ from app.routers import webhook, git_config
 
 app = FastAPI()
 
+app.add_middleware(
+    allow_origins=["*"],  # 允许所有来源
+    allow_credentials=True,
+    allow_methods=["*"],  # 允许的请求方法
+    allow_headers=["*"],  # 允许的请求头
+)
 
 # 包含上传路由
 
